@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { useUser } from "@auth0/nextjs-auth0";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -1,3 +1,4 @@
+import React from "react";
 import { Section } from "@/components/ui/section";
 
 /**
@@ -8,8 +9,8 @@ export default function Contact() {
     <Section>
       <h1 className="text-3xl font-bw-gradual mb-4">Contact Us</h1>
       <p className="text-lg text-gray mb-4">
-        We would love to hear from you! Reach out to us via email and we\'ll get back to you as soon
-        as possible.
+        We would love to hear from you! Reach out to us via email and we&apos;ll get back to you as
+        soon as possible.
       </p>
       <p className="text-lg text-gray">
         Email:{" "}

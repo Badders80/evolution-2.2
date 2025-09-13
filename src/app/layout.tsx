@@ -2,7 +2,7 @@ import React from "react";
 import "@/app/globals.css";
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
-import { UserProvider } from "@auth0/nextjs-auth0";
+import { Auth0Provider } from "@auth0/nextjs-auth0";
 
 /**
  * Default metadata for the application.
@@ -45,10 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="bg-background text-foreground min-h-screen flex flex-col"
         suppressHydrationWarning={true}
       >
-        <UserProvider>
+        <Auth0Provider>
           <main className="flex-1">{children}</main>
           <Footer />
-        </UserProvider>
+        </Auth0Provider>
       </body>
     </html>
   );

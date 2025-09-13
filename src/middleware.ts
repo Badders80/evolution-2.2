@@ -1,14 +1,18 @@
-import { withAuth } from "@auth0/nextjs-auth0/edge";
+import type { NextRequest } from "next/server";
+import { auth0 } from "./lib/auth0";
 
-/**
- * Middleware to protect the My Stables route using Auth0.
- */
-export default withAuth({
-  pages: {
-    signIn: "/api/auth/login",
-  },
-});
+export async function middleware(request: NextRequest) {
+  return await auth0.middleware(request);
+}
 
 export const config = {
-  matcher: ["/my-stables/:path*"],
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
+     */
+    "/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+  ],
 };
