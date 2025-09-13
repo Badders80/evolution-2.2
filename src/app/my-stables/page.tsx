@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Section from '@/components/Section';
 // import { useUser } from '@auth0/nextjs-auth0/client';
 
@@ -12,7 +13,7 @@ export default function MyStables() {
   const user = null; // Temporary
   return (
     <Section>
-      <h1 className="text-3xl font-bw-gradual mb-4">My Stables</h1>
+      <h1 className="text-3xl font-heading mb-4">My Stables</h1>
       {user ? (
         <p className="text-lg text-gray">
           Welcome back! Your stable details will appear here once

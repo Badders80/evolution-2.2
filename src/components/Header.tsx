@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0';
 import Button from '@/components/Button';
@@ -13,7 +14,7 @@ export default function Header() {
   return (
     <header className="bg-background text-foreground px-4 py-4 border-b border-gray">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="font-bw-gradual text-xl md:text-2xl">
+        <Link href="/" className="font-heading text-xl md:text-2xl">
           Evolution Stables
         </Link>
         <nav className="hidden md:flex space-x-4">

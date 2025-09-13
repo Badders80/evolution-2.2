@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 flex items-center justify-between px-12 py-4 bg-black/80 backdrop-blur border-b border-gray-800" role="banner">
+      <header className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-black/80 backdrop-blur border-b border-gray-800" role="banner">
         {/* Logo */}
         <div className="flex items-center">
           <Image
@@ -61,7 +62,7 @@ export const Header = () => {
         </button>
 
         {/* CTA Button */}
-        <Button className="hidden md:block ml-6" variant="default" aria-label={user ? "Logout" : "Login"}>
+        <Button className="hidden md:block ml-4" variant="outline" aria-label={user ? "Logout" : "Login"}>
           {user ? "Logout" : "Login"}
         </Button>
       </header>
@@ -90,7 +91,7 @@ export const Header = () => {
                 My Stables
               </a>
             )}
-            <Button className="mt-4" variant="default" aria-label={user ? "Logout" : "Login"} onClick={() => setIsMenuOpen(false)} role="menuitem">
+            <Button className="mt-4" variant="outline" aria-label={user ? "Logout" : "Login"} onClick={() => setIsMenuOpen(false)} role="menuitem">
               {user ? "Logout" : "Login"}
             </Button>
           </nav>

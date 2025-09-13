@@ -1,3 +1,4 @@
+import React from 'react';
 import '@/app/globals.css';
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
