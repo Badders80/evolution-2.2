@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0";
-import Button from "@/components/Button";
+import { Button } from "@/components/ui/button";
 
 /**
  * The site header containing the logo, navigation links and auth buttons.
@@ -42,7 +42,7 @@ export default function Header() {
         <div className="ml-4 flex items-center space-x-2">
           {user ? (
             <Link href="/api/auth/logout">
-              <Button variant="secondary">Logout</Button>
+              <Button variant="outline">Logout</Button>
             </Link>
           ) : (
             <Link href="/api/auth/login">
