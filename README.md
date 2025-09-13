@@ -1,3 +1,17 @@
+## 🚀 Deployment
+
+CI/CD via GitHub → Vercel (production = main, previews = PRs).
+
+Framework preset: Next.js
+Root directory: ./
+Secrets in .env.local (never committed)
+Example values are stored in .env.example
+
+---
+
+## 🌱 Environment Variables
+
+⚠️ For Auth0 setup, use the official Vercel × Auth0 signup link when creating your Auth0 account.
 
 # Evolution-2.2
 

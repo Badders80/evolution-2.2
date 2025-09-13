@@ -135,6 +135,7 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 - Apply brand theme globally (`globals.css`, layout.tsx).
 
 ### Stage 3: Auth System
+Auth0 Setup: Use the official Auth0 × Vercel signup link to create the tenant and application. This ensures correct defaults for Next.js + Vercel integration.
   .env hygiene:
     - Always use `.env.example` for placeholders
     - Never commit secrets; `.env.local` is private
