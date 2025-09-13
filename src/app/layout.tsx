@@ -1,8 +1,6 @@
 import '@/app/globals.css';
 import type { Metadata } from 'next';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { UserProvider } from '@auth0/nextjs-auth0';
 
 /**
  * Default metadata for the application.  
@@ -43,11 +41,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-background text-foreground min-h-screen flex flex-col">
-          <Header />
+      <body className="bg-background text-foreground min-h-screen flex flex-col" suppressHydrationWarning={true}>
           <main className="flex-1">{children}</main>
           <Footer />
-          <Header />
       </body>
     </html>
   );
