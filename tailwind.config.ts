@@ -14,14 +14,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: {
-          400: '#e5b875',
-          500: '#d4af37',
-          600: '#c39a53',
-        },
+        gold: '#d4a964',
         gray: '#747474',
-        background: '#000000',
-        foreground: '#ffffff',
+        black: '#000000',
+        white: '#ffffff',
       },
       fontFamily: {
         'bw-gradual': ['Bw Gradual', 'sans-serif'],
