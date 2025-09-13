@@ -2,6 +2,13 @@
 
 This document tracks progress through the Bible stages.
 
+## ✅ Block 1 — Triage & Compile Baseline (commit 67793a0)
+
+- Removed Babel config, unified Jest config
+- Lint/test/build gates all passing
+- Repo pushed to GitHub, Husky loop fixed
+- Pre-push hook configured for quality gates
+
 ## ✅ Stage 1: Repo Initialization
 
 - Scaffold Next.js 15 project
