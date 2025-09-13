@@ -161,33 +161,197 @@ Auth0 Setup: Use the official Auth0 × Vercel signup link to create the tenant a
   - Contact (`/contact`)
   - My Stables (gated, `/my-stables`)
 - Footer: must include social links and icons for:
-   - X (@evostables)
-   - Instagram (@evostables)
-   - LinkedIn (Alex Baddeley)
-- Place assets (logos, favicon, OG images) in `/public/assets`.
 
-### Stage 5: SEO & Metadata
-- Configure `app/layout.tsx` with `generateMetadata()`.
-- Add OG and Twitter image support.
-- Add favicon + social preview images.
-- Ensure per-page dynamic metadata (News + Events slugs).
+  # 📖 Evolution-2.2 Project Bible (Final Edition)
 
-### Stage 6: Testing & Quality
-- Install Jest + React Testing Library + axe-core/react.
-- Write tests for:
-  - Buttons & key UI components
-  - Auth flows (login/logout)
-  - Accessibility tests (axe-core/react)
-  - Branded error page (`/error`) and not-found page (`/not-found`)
-  - Lighthouse audit: >90 in all categories
+  This Bible governs the full lifecycle of **Evolution-2.2**, the official build of the Evolution project.  
+  It consolidates and supersedes all previous versions (2.0, 2.1).  
+  All contributors, agents, and maintainers must adhere to this document. **Non-negotiables must be strictly observed.**
 
----
+  ---
 
-## 🏁 Final QA
+  ## ✅ Stage Checklist
 
-- Run Lighthouse audit, ensure >90 in all categories
-- Accessibility scan (WCAG AA)
-- SEO checks (OG/Twitter images, dynamic metadata)
-- Confirm all pages and Auth0 work in production
+  - [x] Repo initialization  
+  - [x] Vercel deployment  
+  - [ ] Stage 2: Design System  
+  - [ ] Stage 3: Auth0 Integration  
+  - [ ] Stage 4: Feature Buildout  
+  - [ ] Stage 5: SEO & Metadata  
+  - [ ] Stage 6: Testing & Quality  
+  - [ ] Stage 7: Final Verification  
 
----
+  ---
+
+  ## 🚀 Project Overview
+
+  **Stack:**
+  - Framework: Next.js 15 (App Router, TypeScript)
+  - Styling: Tailwind CSS v4 + shadcn/ui + Framer Motion
+  - UI Components: Modular, theme-driven, reusable, with `cn()` util (`clsx + tailwind-merge`)
+  - Auth: Auth0 integration (`@auth0/nextjs-auth0@4.9.0`)
+  - Fonts: IBM Plex Sans (body) + Bw Gradual (headings)
+  - Brand Palette: Black / Gold / Gray / White
+  - Hosting/CI/CD: Vercel (account: `baddeley0-2132`)
+  - Testing: Jest + React Testing Library + axe-core/react
+  - Accessibility: WCAG AA compliant, Lighthouse score >90
+  - SEO/Meta: Dynamic metadata, OG & Twitter support, favicon & social images
+
+  **Repo:** [Badders80/evolution-2.2](https://github.com/Badders80/evolution-2.2)
+
+  **Deployment:** [Vercel Project](https://vercel.com/baddeley0-2132s-projects/evolution-2.2)  
+  - `main` → Production  
+  - PRs → Preview builds  
+
+  ---
+
+  ## 📂 Project Stages
+
+  ### Stage 1: Repo Initialization ✅
+  - Scaffolded with `create-next-app@latest`.
+  - Repo linked to GitHub (`evolution-2.2`).
+  - Production deploy set up on Vercel.
+  - Status: **Complete.**
+
+  ### Stage 2: Design System
+  - Install and configure **shadcn/ui**.
+  - Add `cn()` util using `clsx` and `tailwind-merge`.
+  - Extend Tailwind config with brand palette and fonts:
+    ```ts
+    fontFamily: {
+      "bw-gradual": ["Bw Gradual", "sans-serif"],
+      "ibm-plex": ["IBM Plex Sans", "sans-serif"],
+    },
+    colors: {
+      gold: "#d4a964",
+      gray: "#747474",
+      background: "#000000",
+      foreground: "#ffffff",
+    }
+    ```
+
+  Integrate fonts: IBM Plex Sans + Bw Gradual.
+
+  Build base components: Button, Header, Footer (with social links: Instagram @evostables, X @evostables, LinkedIn Alex Baddeley), Section wrapper.
+
+  Apply brand theme globally (globals.css, layout.tsx).
+
+  ### Stage 3: Auth System
+
+  Auth0 Setup: Use the official Auth0 × Vercel signup link to create the tenant and application.
+
+  Install and configure Auth0 using @auth0/nextjs-auth0@4.9.0.
+
+  Setup /api/auth/[...auth0]/route.ts.
+
+  Configure .env.example with:
+
+  AUTH0_SECRET=your-secret-here
+  AUTH0_BASE_URL=http://localhost:3000
+  AUTH0_ISSUER_BASE_URL=https://your-tenant-region.auth0.com
+  AUTH0_CLIENT_ID=your-client-id
+  AUTH0_CLIENT_SECRET=your-client-secret
+
+
+  Protect My Stables route with withAuth middleware (/my-stables/:path*).
+
+  Use server-side token fetching for API calls.
+
+  Ensure login/logout works locally and in Vercel.
+
+  ### Stage 4: Feature Buildout
+
+  Implement planned pages with Section wrapper:
+
+  Home (/)
+
+  About Us (/about)
+
+  Tokinvest (/tokinvest)
+
+  News (/news, with dynamic slugs)
+
+  Events (/events, with dynamic slugs)
+
+  Contact (/contact)
+
+  My Stables (gated, /my-stables)
+
+  Footer: include X, Instagram, LinkedIn links + icons.
+
+  Place assets (logos, favicon, OG images) in /public/assets.
+
+  ### Stage 5: SEO & Metadata
+
+  Configure app/layout.tsx with generateMetadata().
+
+  Add OG and Twitter image support.
+
+  Add favicon + social preview images.
+
+  Ensure per-page dynamic metadata (News + Events slugs).
+
+  ### Stage 6: Testing & Quality
+
+  Install Jest + React Testing Library + axe-core/react.
+
+  Write tests for:
+
+  Buttons & key UI components
+
+  Auth flows (login/logout)
+
+  Add branded error page (/app/error.tsx) and not-found page (/app/not-found.tsx).
+
+  Add hover/glow effects inspired by Aceternity UI.
+
+  Run Lighthouse audit, ensure >90 in all categories.
+
+  Accessibility check: ensure WCAG compliance.
+
+  ### Stage 7: Final Verification
+
+  Verify all pages load correctly in production.
+
+  Confirm Auth0 works in production (Vercel env vars set).
+
+  Confirm SEO metadata and OG images render on social previews.
+
+  Review commit history for clean stage-based commits.
+
+  Optional future roadmap: CMS (Sanity/Contentful), Analytics (Vercel, Posthog, GA), Monitoring (Sentry).
+
+  ✅ Non-Negotiables
+
+  Bible-first. All contributors must follow this document exactly.
+
+  Env hygiene. .env.local private, .env.example public with placeholders.
+
+  No secrets in repo. Ever.
+
+  Commit discipline. Every stage = one clean commit.
+
+  Accessibility. WCAG AA minimum.
+
+  Performance. Lighthouse >90 target.
+
+  Tooling. Husky + lint-staged must be active.
+
+  🏁 Final QA
+
+  Before final delivery:
+
+  Run Lighthouse, ensure all scores >90.
+
+  Run accessibility scans with axe-core/react.
+
+  Verify SEO metadata and OG images display correctly.
+
+  Confirm Auth0 login/logout works in production.
+
+  Confirm commit history is clean and follows stage-by-stage flow.
+
+  ✨ Built with discipline, designed for scale.
+
+
+  ---
