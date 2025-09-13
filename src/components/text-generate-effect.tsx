@@ -21,10 +21,13 @@ export const TextGenerateEffect: React.FC<TextGenerateEffectProps> = ({
 
   useEffect(() => {
     if (currentIndex < words.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText((prev) => prev + words[currentIndex]);
-        setCurrentIndex((prev) => prev + 1);
-      }, (duration * 1000) / words.length);
+      const timeout = setTimeout(
+        () => {
+          setDisplayedText(prev => prev + words[currentIndex]);
+          setCurrentIndex(prev => prev + 1);
+        },
+        (duration * 1000) / words.length
+      );
 
       return () => clearTimeout(timeout);
     } else {

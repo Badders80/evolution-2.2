@@ -1,22 +1,23 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}',
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        gold: '#d4a964',       // brand gold
+        gold: "#d4a964", // brand gold
         gray: {
-          300: '#747474',      // secondary text / muted
-          DEFAULT: '#747474',
+          300: "#747474", // secondary text / muted
+          DEFAULT: "#747474",
         },
-        black: '#000000',
-        white: '#ffffff',
+        black: "#000000",
+        white: "#ffffff",
       },
       fontFamily: {
         heading: ["'Bw Gradual'", "sans-serif"],
@@ -38,12 +39,12 @@ const config: Config = {
       },
       fontSize: {
         // optional: custom font sizes following scale
-        'heading-xl': ['3rem', { lineHeight: '1.2' }],   // 48px
-        'heading-2xl': ['4rem', { lineHeight: '1.2' }],  // 64px + adjust
+        "heading-xl": ["3rem", { lineHeight: "1.2" }], // 48px
+        "heading-2xl": ["4rem", { lineHeight: "1.2" }], // 64px + adjust
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;

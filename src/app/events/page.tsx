@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import Section from '@/components/Section';
+import Link from "next/link";
+import { Section } from "@/components/ui/section";
 
 interface EventItem {
   slug: string;
@@ -10,14 +10,14 @@ interface EventItem {
 // Placeholder events until a CMS is integrated.
 const events: EventItem[] = [
   {
-    slug: 'webinar-fractional-investing',
-    title: 'Webinar: Fractional Horse Investing 101',
-    date: '2025-10-01',
+    slug: "webinar-fractional-investing",
+    title: "Webinar: Fractional Horse Investing 101",
+    date: "2025-10-01",
   },
   {
-    slug: 'race-day-auckland',
-    title: 'Race Day at Ellerslie',
-    date: '2025-11-15',
+    slug: "race-day-auckland",
+    title: "Race Day at Ellerslie",
+    date: "2025-11-15",
   },
 ];
 
@@ -29,7 +29,7 @@ export default function Events() {
     <Section>
       <h1 className="text-3xl font-bw-gradual mb-4">Events</h1>
       <ul className="space-y-6">
-        {events.map((event) => (
+        {events.map(event => (
           <li key={event.slug} className="border-b border-gray pb-4">
             <Link
               href={`/events/${event.slug}`}

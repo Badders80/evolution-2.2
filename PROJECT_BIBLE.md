@@ -1,6 +1,9 @@
 # 📖 Evolution-2.2 Project Bible (Final Edition)
+
 #
+
 ## ✅ Stage Checklist
+
 - [x] Repo Initialization
 - [x] Vercel Production Deploy
 - [ ] Design System
@@ -17,6 +20,7 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 ## 🚀 Project Overview
 
 **Stack:**
+
 - **Framework:** Next.js 15 (App Router, TypeScript)
 - **Styling:** Tailwind CSS v4 + shadcn/ui + Framer Motion
 - **UI Components:** Modular, theme-driven, reusable, with `cn()` util (`clsx + tailwind-merge`)
@@ -31,6 +35,7 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 **Repo:** [Badders80/evolution-2.2](https://github.com/Badders80/evolution-2.2)
 
 **Deployment:** [Vercel Project](https://vercel.com/baddeley0-2132s-projects/evolution-2.2)
+
 - `main` → Production
 - PRs → Preview builds
 
@@ -49,18 +54,21 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 ## 📂 Project Stages
 
 ### Stage 1: Repo Initialization ✅
+
 - Scaffolded with `create-next-app@latest`.
 - Repo linked to GitHub (`evolution-2.2`).
 - Production deploy set up on Vercel.
 - Status: **Complete.**
 
 ### Stage 2: Design System
+
 - Install and configure **shadcn/ui**.
 - Add `cn()` util using `clsx` and `tailwind-merge`.
 
 # 📖 Evolution-2.2 Project Bible (Final Edition)
 
 ## ✅ Stage Checklist
+
 - [x] Repo Initialization
 - [x] Vercel Production Deploy
 - [ ] Design System
@@ -77,6 +85,7 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 ## 🚀 Project Overview
 
 **Stack:**
+
 - **Framework:** Next.js 15 (App Router, TypeScript)
 - **Styling:** Tailwind CSS v4 + shadcn/ui + Framer Motion
 - **UI Components:** Modular, theme-driven, reusable, with `cn()` util (`clsx + tailwind-merge`)
@@ -91,6 +100,7 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 **Repo:** [Badders80/evolution-2.2](https://github.com/Badders80/evolution-2.2)
 
 **Deployment:** [Vercel Project](https://evolution-2-2.vercel.app)
+
 - `main` → Production
 - PRs → Preview builds
 
@@ -109,12 +119,14 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 ## 📂 Project Stages
 
 ### Stage 1: Repo Initialization ✅
+
 - Scaffolded with `create-next-app@latest`.
 - Repo linked to GitHub (`evolution-2.2`).
 - Production deploy set up on Vercel.
 - Status: **Complete.**
 
 ### Stage 2: Design System
+
 - Install and configure **shadcn/ui**.
 - Add `cn()` util using `clsx` and `tailwind-merge`.
 - Extend Tailwind config with brand palette and fonts:
@@ -135,23 +147,23 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 - Apply brand theme globally (`globals.css`, layout.tsx).
 
 ### Stage 3: Auth System
+
 Auth0 Setup: Use the official Auth0 × Vercel signup link to create the tenant and application. This ensures correct defaults for Next.js + Vercel integration.
-  .env hygiene:
-    - Always use `.env.example` for placeholders
-    - Never commit secrets; `.env.local` is private
-    - Example `.env.example`:
-      ```env
+.env hygiene: - Always use `.env.example` for placeholders - Never commit secrets; `.env.local` is private - Example `.env.example`:
+`env
       AUTH0_SECRET=your-secret-here
       AUTH0_BASE_URL=http://localhost:3000
       AUTH0_ISSUER_BASE_URL=https://your-tenant-region.auth0.com
       AUTH0_CLIENT_ID=your-client-id
       AUTH0_CLIENT_SECRET=your-client-secret
-      ```
+      `
+
 - Protect **My Stables** route with `withAuth` middleware (`/my-stables/:path*`).
 - Use server-side token fetching for API calls.
 - Ensure login/logout works locally and in Vercel.
 
 ### Stage 4: Feature Buildout
+
 - Implement planned pages with Section wrapper:
   - Home (`/`)
   - About Us (`/about`)
@@ -168,20 +180,19 @@ Auth0 Setup: Use the official Auth0 × Vercel signup link to create the tenant a
   It consolidates and supersedes all previous versions (2.0, 2.1).  
   All contributors, agents, and maintainers must adhere to this document. **Non-negotiables must be strictly observed.**
 
-  ---
+  ***
 
   ## ✅ Stage Checklist
+  - [x] Repo initialization
+  - [x] Vercel deployment
+  - [ ] Stage 2: Design System
+  - [ ] Stage 3: Auth0 Integration
+  - [ ] Stage 4: Feature Buildout
+  - [ ] Stage 5: SEO & Metadata
+  - [ ] Stage 6: Testing & Quality
+  - [ ] Stage 7: Final Verification
 
-  - [x] Repo initialization  
-  - [x] Vercel deployment  
-  - [ ] Stage 2: Design System  
-  - [ ] Stage 3: Auth0 Integration  
-  - [ ] Stage 4: Feature Buildout  
-  - [ ] Stage 5: SEO & Metadata  
-  - [ ] Stage 6: Testing & Quality  
-  - [ ] Stage 7: Final Verification  
-
-  ---
+  ***
 
   ## 🚀 Project Overview
 
@@ -199,11 +210,11 @@ Auth0 Setup: Use the official Auth0 × Vercel signup link to create the tenant a
 
   **Repo:** [Badders80/evolution-2.2](https://github.com/Badders80/evolution-2.2)
 
-  **Deployment:** [Vercel Project](https://vercel.com/baddeley0-2132s-projects/evolution-2.2)  
-  - `main` → Production  
-  - PRs → Preview builds  
+  **Deployment:** [Vercel Project](https://vercel.com/baddeley0-2132s-projects/evolution-2.2)
+  - `main` → Production
+  - PRs → Preview builds
 
-  ---
+  ***
 
   ## 📂 Project Stages
 
@@ -252,8 +263,7 @@ Auth0 Setup: Use the official Auth0 × Vercel signup link to create the tenant a
   AUTH0_CLIENT_ID=your-client-id
   AUTH0_CLIENT_SECRET=your-client-secret
 
-
-  Protect My Stables route with withAuth middleware (/my-stables/:path*).
+  Protect My Stables route with withAuth middleware (/my-stables/:path\*).
 
   Use server-side token fetching for API calls.
 
@@ -353,5 +363,4 @@ Auth0 Setup: Use the official Auth0 × Vercel signup link to create the tenant a
 
   ✨ Built with discipline, designed for scale.
 
-
-  ---
+  ***

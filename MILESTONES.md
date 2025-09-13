@@ -3,6 +3,7 @@
 This document tracks progress through the Bible stages.
 
 ## ✅ Stage 1: Repo Initialization
+
 - Scaffold Next.js 15 project
 - Repo connected to GitHub
 - Vercel deployment live
@@ -12,6 +13,7 @@ Status: Complete
 ---
 
 ## 🔲 Stage 2: Design System
+
 - Tailwind brand config + fonts
 - shadcn/ui installed
 - Base components (`Button`, `Header`, `Footer`, `Section`)
@@ -19,6 +21,7 @@ Status: Complete
 ---
 
 ## 🔲 Stage 3: Auth0 Integration
+
 - Auth0 wired up
 - `.env.example` with placeholders
 - Gated `/my-stables` working
@@ -26,6 +29,7 @@ Status: Complete
 ---
 
 ## 🔲 Stage 4: Pages
+
 - Home, About Us, Tokinvest
 - News (dynamic), Events (dynamic)
 - Contact, My Stables
@@ -33,12 +37,14 @@ Status: Complete
 ---
 
 ## 🔲 Stage 5: SEO & Metadata
+
 - OG + Twitter image
 - Dynamic metadata in `layout.tsx`
 
 ---
 
 ## 🔲 Stage 6: Testing & Quality
+
 - Jest + RTL setup
 - Accessibility tests
 - Branded error + not-found pages
@@ -47,6 +53,7 @@ Status: Complete
 ---
 
 ## 🔲 Stage 7: Final Verification
+
 - Vercel deploy check
 - Auth0 production check
 - Clean commit history

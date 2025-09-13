@@ -38,7 +38,7 @@ export default function HomePage() {
             <TextGenerateEffect
               words="Own the Experience"
               duration={2.5}
-              className="text-[#d4a964] text-xl md:text-2xl font-medium"
+              className="text-[#d4a964] text-2xl md:text-4xl lg:text-5xl font-medium"
               filter
             />
           </div>
@@ -80,7 +80,9 @@ export default function HomePage() {
         <div className="text-center">
           <h2 className="text-2xl font-heading text-gold mb-4">Ready to Own the Experience?</h2>
           <p className="text-gray-300 mb-8">Join Evolution Stables today and start your journey.</p>
-          <Button variant="glow" size="lg" className="mt-6">Get Started</Button>
+          <Button variant="glow" size="lg" className="mt-6">
+            Get Started
+          </Button>
         </div>
       </Section>
     </div>
