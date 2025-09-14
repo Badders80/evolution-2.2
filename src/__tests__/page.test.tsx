@@ -22,26 +22,46 @@ jest.mock("next/image", () => ({
 }));
 
 describe("HomePage", () => {
-  it("renders the design system test sections", () => {
+  it("renders the landing page structure", () => {
     render(<HomePage />);
 
-    // Check test sections
-    expect(screen.getByRole("heading", { name: "Test Section 1", level: 1 })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Test Section 2", level: 1 })).toBeInTheDocument();
+    // Check main heading
+    expect(
+      screen.getByRole("heading", { name: "Excellence in Equine Care", level: 1 }),
+    ).toBeInTheDocument();
 
-    // Check that sections have proper container structure
-    const sections = screen.getAllByRole("generic", { hidden: true });
-    expect(sections.length).toBeGreaterThan(0);
+    // Check section headings
+    expect(screen.getByRole("heading", { name: "Premium Services", level: 2 })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Our Process", level: 2 })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Pricing", level: 2 })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Blog", level: 2 })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Ready to Own the Experience?", level: 2 }),
+    ).toBeInTheDocument();
+
+    // Check navigation
+    expect(screen.getByRole("navigation", { name: "Main navigation" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Services" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Process" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Blog" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Contact" })).toBeInTheDocument();
+
+    // Check CTA buttons
+    expect(screen.getByRole("button", { name: "Get Started" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Learn More" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Get Started Today" })).toBeInTheDocument();
   });
 
   it("renders sections with consistent spacing", () => {
     render(<HomePage />);
 
-    // Check that sections exist and have proper structure
+    // Check that multiple headings exist (main + section headings)
     const headings = screen.getAllByRole("heading");
-    expect(headings).toHaveLength(2);
-    expect(headings[0]).toHaveTextContent("Test Section 1");
-    expect(headings[1]).toHaveTextContent("Test Section 2");
+    expect(headings.length).toBeGreaterThan(5); // Main heading + 4 section headings + CTA heading
+
+    // Check that the main heading is "Excellence in Equine Care"
+    expect(headings[0]).toHaveTextContent("Excellence in Equine Care");
   });
 
   it("matches snapshot", () => {
