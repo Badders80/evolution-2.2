@@ -20,7 +20,7 @@ export default function NavBar() {
       </div>
 
       {/* Center: Navigation Menu - Desktop */}
-      <nav className="hidden md:flex items-center space-x-6" aria-label="Main navigation">
+      <nav className="flex items-center space-x-6" aria-label="Main navigation">
         {["Home", "About", "Tokinvest", "News", "Events", "Contact", "My Stables"].map((item) => (
           <a
             key={item}
@@ -51,7 +51,7 @@ export default function NavBar() {
       </div>
 
       {/* Right: Auth Buttons - Desktop */}
-      <div className="hidden md:flex items-center space-x-4">
+      <div className="flex items-center space-x-4">
         <button className="text-gold font-ibm-plex font-medium hover:text-white transition-colors px-4 py-2">
           Login
         </button>

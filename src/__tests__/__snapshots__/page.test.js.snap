@@ -20,7 +20,7 @@ exports[`HomePage matches snapshot 1`] = `
     </div>
     <nav
       aria-label="Main navigation"
-      class="hidden md:flex items-center space-x-6"
+      class="flex items-center space-x-6"
     >
       <a
         class="text-gold font-ibm-plex font-medium hover:text-white transition-colors"
@@ -88,7 +88,7 @@ exports[`HomePage matches snapshot 1`] = `
       </button>
     </div>
     <div
-      class="hidden md:flex items-center space-x-4"
+      class="flex items-center space-x-4"
     >
       <button
         class="text-gold font-ibm-plex font-medium hover:text-white transition-colors px-4 py-2"
