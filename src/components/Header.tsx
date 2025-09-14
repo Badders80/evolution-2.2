@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useUser } from "@auth0/nextjs-auth0";
+// import { useUser } from "@auth0/nextjs-auth0";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
  */
 export default function Header() {
   // Access the Auth0 user on the client; it will be undefined on the server.
-  const { user } = useUser() || {};
+  // const { user } = useUser() || {};
 
   return (
     <header className="bg-background text-foreground px-4 py-4 border-b border-gray">
@@ -33,14 +33,14 @@ export default function Header() {
           <Link href="/contact" className="hover:text-gold">
             Contact
           </Link>
-          {user && (
+          {/* {user && (
             <Link href="/my-stables" className="hover:text-gold">
               My Stables
             </Link>
-          )}
+          )} */}
         </nav>
         <div className="ml-4 flex items-center space-x-2">
-          {user ? (
+          {/* {user ? (
             <Link href="/api/auth/logout">
               <Button variant="outline">Logout</Button>
             </Link>
@@ -48,7 +48,8 @@ export default function Header() {
             <Link href="/api/auth/login">
               <Button>Login</Button>
             </Link>
-          )}
+          )} */}
+          <Button aria-label="Login">Login</Button>
         </div>
       </div>
     </header>

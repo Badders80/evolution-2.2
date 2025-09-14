@@ -1,3 +1,4 @@
+import React from "react";
 import NavBar from "@/components/layout/NavBar";
 
 export default function HomePage() {
@@ -16,7 +17,7 @@ export default function HomePage() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h1 className="text-3xl font-bold">Hero</h1>
+        <h1 className="text-3xl font-bold text-gold">Hero</h1>
       </section>
 
       {/* Sections */}
