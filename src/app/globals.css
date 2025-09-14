@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables for theme */
+:root {
+  --gold: #d4a964;
+  --gold-hover: #b8945a;
+  --background: #000000;
+  --foreground: #ffffff;
+  --gray: #747474;
+}
+
 /* Global theme and resets */
 html, body {
   height: 100%;
   margin: 0;
-  background-color: #000000; /* Black background */
-  color: #ffffff; /* White text */
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 /* Heading styles with Bw Gradual font */
