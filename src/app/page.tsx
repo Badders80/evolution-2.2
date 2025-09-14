@@ -1,5 +1,10 @@
 import React from "react";
 import NavBar from "@/components/layout/NavBar";
+import Hero from "@/components/Hero";
+import Section1 from "@/components/Section1";
+import Section2 from "@/components/Section2";
+import CTA from "@/components/CTA";
+import SimpleFooter from "@/components/SimpleFooter";
 
 export default function HomePage() {
   return (
@@ -8,44 +13,30 @@ export default function HomePage() {
       <NavBar />
 
       {/* Hero */}
-      <section
-        className="relative w-full flex items-center justify-center h-screen bg-black text-gold"
-        style={{
-          backgroundImage: "url('/assets/Horse-Double-Black.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <h1 className="text-3xl font-bold text-gold">Hero</h1>
-      </section>
+      <Hero />
+
+      {/* Thin divider */}
+      <div className="border-t border-gray-300"></div>
 
       {/* Sections */}
-      <section className="w-full py-section bg-gray-500 text-gold text-lg">
-        <div className="container">Section1</div>
-      </section>
+      <Section1 />
 
-      <section className="w-full py-section bg-gray-700 text-gold text-lg">
-        <div className="container">Section2</div>
-      </section>
+      {/* Thin divider */}
+      <div className="border-t border-gray-300"></div>
 
-      <section className="w-full py-section bg-gray-500 text-gold text-lg">
-        <div className="container">Section3</div>
-      </section>
+      <Section2 />
 
-      <section className="w-full py-section bg-gray-700 text-gold text-lg">
-        <div className="container">Section4</div>
-      </section>
+      {/* Thin divider */}
+      <div className="border-t border-gray-300"></div>
 
       {/* CTA */}
-      <section className="w-full py-section bg-gray-500 text-gold text-lg">
-        <div className="container">CTA</div>
-      </section>
+      <CTA />
+
+      {/* Thin divider */}
+      <div className="border-t border-gray-300"></div>
 
       {/* Footer */}
-      <footer className="w-full py-section bg-gray-700 text-gold text-lg text-center">
-        Footer
-      </footer>
+      <SimpleFooter />
     </div>
   );
 }

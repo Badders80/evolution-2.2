@@ -1,4 +1,6 @@
-﻿import React from "react";
+﻿/* eslint-disable @next/next/no-img-element */
+
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import HomePage from "../app/page";
@@ -6,14 +8,10 @@ import HomePage from "../app/page";
 // Mock Next.js Image component
 jest.mock("next/image", () => ({
   __esModule: true,
-  default: "img",
+  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => React.createElement('img', props),
 }));
 
 describe("HomePage", () => {
-  it("renders without crashing", () => {
-    expect(() => render(<HomePage />)).not.toThrow();
-  });
-
   it("renders the scaffold structure", () => {
     render(<HomePage />);
 
@@ -51,3 +49,5 @@ describe("HomePage", () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 });
+
+/* eslint-enable @next/next/no-img-element */
