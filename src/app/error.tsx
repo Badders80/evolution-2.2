@@ -1,7 +1,5 @@
 "use client";
 
-import { Section } from "@/components/ui/section";
-
 interface ErrorProps {
   reset: () => void;
 }
@@ -12,14 +10,16 @@ interface ErrorProps {
  */
 export default function GlobalError({ reset }: ErrorProps) {
   return (
-    <Section className="text-center mt-16">
-      <h1 className="text-3xl font-bw-gradual mb-4">Something went wrong</h1>
-      <p className="text-lg text-gray mb-6">
-        We&apos;re sorry, an unexpected error occurred. Please try again.
-      </p>
-      <button onClick={() => reset()} className="underline text-gold hover:text-foreground">
-        Retry
-      </button>
-    </Section>
+    <div className="text-center p-6 bg-[#006400] text-white min-h-screen flex items-center justify-center">
+      <div>
+        <h1 className="text-4xl font-bw-gradual mb-4">Error</h1>
+        <p className="text-lg mb-6">
+          Something went wrong.{" "}
+          <button onClick={() => reset()} className="underline hover:text-gold">
+            Try again
+          </button>
+        </p>
+      </div>
+    </div>
   );
 }

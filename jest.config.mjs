@@ -1,4 +1,5 @@
-﻿const nextJest = require('next/jest');
+﻿/* eslint-disable @typescript-eslint/no-require-imports */
+import nextJest from 'next/jest.js';
 const createJestConfig = nextJest({ dir: './' });
 const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom',
@@ -11,4 +12,4 @@ const customJestConfig = {
     '<rootDir>/node_modules/'
   ]
 };
-module.exports = createJestConfig(customJestConfig);
+export default createJestConfig(customJestConfig);

@@ -117,6 +117,9 @@ exports[`HomePage matches snapshot 1`] = `
       src="/assets/ES-Branded-Gold.png"
     />
   </section>
+  <div
+    class="border-t border-gray-300"
+  />
   <section
     aria-label="Section 1 placeholder"
     class="bg-black text-white aspect-[19/6] flex items-center justify-center"
@@ -128,6 +131,9 @@ exports[`HomePage matches snapshot 1`] = `
       Section 1
     </h2>
   </section>
+  <div
+    class="border-t border-gray-300"
+  />
   <section
     aria-label="Section 2 placeholder"
     class="bg-black text-white aspect-[19/6] flex items-center justify-center"
@@ -139,6 +145,9 @@ exports[`HomePage matches snapshot 1`] = `
       Section 2
     </h2>
   </section>
+  <div
+    class="border-t border-gray-300"
+  />
   <section
     aria-label="Call to action section"
     class="bg-black text-white aspect-[19/6] flex items-center justify-center"
@@ -150,6 +159,9 @@ exports[`HomePage matches snapshot 1`] = `
       CTA
     </h2>
   </section>
+  <div
+    class="border-t border-gray-300"
+  />
   <section
     aria-label="Footer section"
     class="bg-black text-white aspect-[19/6] flex items-center justify-center"
