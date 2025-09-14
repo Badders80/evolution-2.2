@@ -22,7 +22,6 @@ export default function Hero() {
         width={600}
         height={400}
         className="relative z-10 w-[60%] max-w-[600px] h-auto drop-shadow-lg"
-        priority
       />
     </section>
   );

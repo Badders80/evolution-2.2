@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "@/components/layout/NavBar";
 import Hero from "@/components/Hero";
 import Section1 from "@/components/Section1";
 import Section2 from "@/components/Section2";
@@ -9,9 +8,6 @@ import SimpleFooter from "@/components/SimpleFooter";
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* NavBar */}
-      <NavBar />
-
       {/* Hero */}
       <Hero />
 

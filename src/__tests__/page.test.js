@@ -27,11 +27,12 @@ describe("HomePage", () => {
     expect(screen.getByText("Footer")).toBeInTheDocument();
 
     // Check navbar content
-    expect(screen.getByText("Home")).toBeInTheDocument();
-    expect(screen.getByText("Login")).toBeInTheDocument();
+    // Note: NavBar is now rendered in layout.tsx, not in HomePage component
+    // expect(screen.getByText("Home")).toBeInTheDocument();
+    // expect(screen.getByText("Login")).toBeInTheDocument();
 
     // Check logo alt text
-    expect(screen.getByAltText("Evolution Stables Logo")).toBeInTheDocument();
+    expect(screen.getByAltText("Evolution Stables branded logo")).toBeInTheDocument();
   });
 
   it("renders sections with alternating backgrounds", () => {

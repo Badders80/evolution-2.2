@@ -1,6 +1,4 @@
-﻿/* eslint-disable @next/next/no-img-element */
-
-import React from "react";
+﻿import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import HomePage from "../app/page";
@@ -8,7 +6,7 @@ import HomePage from "../app/page";
 // Mock Next.js Image component
 jest.mock("next/image", () => ({
   __esModule: true,
-  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => React.createElement('img', props),
+  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => React.createElement("img", props),
 }));
 
 describe("HomePage", () => {
@@ -25,11 +23,12 @@ describe("HomePage", () => {
     expect(screen.getByText("Footer")).toBeInTheDocument();
 
     // Check navbar content
-    expect(screen.getByText("Home")).toBeInTheDocument();
-    expect(screen.getByText("Login")).toBeInTheDocument();
+    // Note: NavBar is now rendered in layout.tsx, not in HomePage component
+    // expect(screen.getByText("Home")).toBeInTheDocument();
+    // expect(screen.getByText("Login")).toBeInTheDocument();
 
     // Check logo alt text
-    expect(screen.getByAltText("Evolution Stables Logo")).toBeInTheDocument();
+    expect(screen.getByAltText("Evolution Stables branded logo")).toBeInTheDocument();
   });
 
   it("renders sections with alternating backgrounds", () => {
@@ -49,5 +48,3 @@ describe("HomePage", () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 });
-
-/* eslint-enable @next/next/no-img-element */

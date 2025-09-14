@@ -1,6 +1,7 @@
 import "./globals.css";
 import "@fontsource/ibm-plex-sans";
 import type { Metadata } from "next";
+import NavBar from "@/components/layout/NavBar";
 
 export const metadata: Metadata = {
   title: "Evolution Stables",
@@ -18,7 +19,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="bg-background text-foreground font-ibm-plex scroll-smooth">{children}</body>
+      <body className="bg-background text-foreground font-ibm-plex scroll-smooth">
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }

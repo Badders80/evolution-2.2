@@ -4,104 +4,6 @@ exports[`HomePage matches snapshot 1`] = `
 <div
   class="min-h-screen flex flex-col"
 >
-  <header
-    class="fixed top-0 w-full bg-black text-gold px-4 md:px-6 py-4 flex items-center justify-between z-50 border-b border-white/5"
-  >
-    <div
-      class="flex items-center"
-    >
-      <img
-        alt="Evolution Stables Logo"
-        class="w-12 h-12"
-        height="48"
-        src="/assets/Logo-Gold.png"
-        width="48"
-      />
-    </div>
-    <nav
-      aria-label="Main navigation"
-      class="flex items-center space-x-6"
-    >
-      <a
-        class="text-gold font-ibm-plex font-medium hover:text-white transition-colors"
-        href="/home"
-      >
-        Home
-      </a>
-      <a
-        class="text-gold font-ibm-plex font-medium hover:text-white transition-colors"
-        href="/about"
-      >
-        About
-      </a>
-      <a
-        class="text-gold font-ibm-plex font-medium hover:text-white transition-colors"
-        href="/tokinvest"
-      >
-        Tokinvest
-      </a>
-      <a
-        class="text-gold font-ibm-plex font-medium hover:text-white transition-colors"
-        href="/news"
-      >
-        News
-      </a>
-      <a
-        class="text-gold font-ibm-plex font-medium hover:text-white transition-colors"
-        href="/events"
-      >
-        Events
-      </a>
-      <a
-        class="text-gold font-ibm-plex font-medium hover:text-white transition-colors"
-        href="/contact"
-      >
-        Contact
-      </a>
-      <a
-        class="text-gold font-ibm-plex font-medium hover:text-white transition-colors"
-        href="/my-stables"
-      >
-        My Stables
-      </a>
-    </nav>
-    <div
-      class="md:hidden"
-    >
-      <button
-        aria-label="Toggle menu"
-        class="text-gold hover:text-white transition-colors"
-      >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M4 6h16M4 12h16M4 18h16"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </button>
-    </div>
-    <div
-      class="flex items-center space-x-4"
-    >
-      <button
-        class="text-gold font-ibm-plex font-medium hover:text-white transition-colors px-4 py-2"
-      >
-        Login
-      </button>
-      <button
-        class="bg-gold text-black font-ibm-plex font-medium px-4 py-2 rounded hover:bg-opacity-90 transition-colors"
-      >
-        Sign Up
-      </button>
-    </div>
-  </header>
   <section
     aria-label="Hero section with Evolution Stables branding"
     class="relative h-screen w-screen flex items-center justify-center"
@@ -114,7 +16,9 @@ exports[`HomePage matches snapshot 1`] = `
     <img
       alt="Evolution Stables branded logo"
       class="relative z-10 w-[60%] max-w-[600px] h-auto drop-shadow-lg"
+      height="400"
       src="/assets/ES-Branded-Gold.png"
+      width="600"
     />
   </section>
   <div

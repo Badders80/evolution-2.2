@@ -2,12 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { navPaddingClasses } from "@/lib/layout";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full bg-black text-gold px-4 md:px-6 py-4 flex items-center justify-between z-50 border-b border-white/5">
+    <header
+      className={`fixed top-0 w-full bg-[#000000] text-gold ${navPaddingClasses} py-4 flex items-center justify-between z-50 border-b border-white/5`}
+    >
       {/* Left: Logo */}
       <div className="flex items-center">
         <Image
@@ -52,17 +56,17 @@ export default function NavBar() {
 
       {/* Right: Auth Buttons - Desktop */}
       <div className="flex items-center space-x-4">
-        <button className="text-gold font-ibm-plex font-medium hover:text-white transition-colors px-4 py-2">
+        <Button variant="ghost" className="text-gold hover:text-white hover:bg-white/10">
           Login
-        </button>
-        <button className="bg-gold text-black font-ibm-plex font-medium px-4 py-2 rounded hover:bg-opacity-90 transition-colors">
-          Sign Up
-        </button>
+        </Button>
+        <Button variant="default" className="bg-gold text-black hover:bg-gold/80">
+          Get Started
+        </Button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-black border-b border-white/5 md:hidden">
+        <div className="absolute top-full left-0 w-full bg-[#000000] border-b border-white/5 md:hidden">
           <nav className="flex flex-col space-y-4 p-4" aria-label="Mobile navigation">
             {["Home", "About", "Tokinvest", "News", "Events", "Contact", "My Stables"].map(
               (item) => (
@@ -77,12 +81,18 @@ export default function NavBar() {
               ),
             )}
             <div className="flex flex-col space-y-2 pt-4 border-t border-white/10">
-              <button className="text-gold font-ibm-plex font-medium hover:text-white transition-colors text-left py-2">
+              <Button
+                variant="ghost"
+                className="text-gold hover:text-white hover:bg-white/10 justify-start"
+              >
                 Login
-              </button>
-              <button className="bg-gold text-black font-ibm-plex font-medium px-4 py-2 rounded hover:bg-opacity-90 transition-colors text-left">
-                Sign Up
-              </button>
+              </Button>
+              <Button
+                variant="default"
+                className="bg-gold text-black hover:bg-gold/80 justify-start"
+              >
+                Get Started
+              </Button>
             </div>
           </nav>
         </div>
