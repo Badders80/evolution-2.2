@@ -29,28 +29,28 @@ const config: Config = {
     },
     extend: {
       colors: {
-        gold: "#d4a964", // brand gold
-        gray: "#747474", // secondary text / muted
-        background: "#000000", // brand black
-        foreground: "#ffffff", // brand white
+        gold: "#FFD700",
+        gray: {
+          50: "#f9fafb",
+          100: "#f3f4f6",
+          200: "#e5e7eb",
+          300: "#d1d5db",
+          400: "#9ca3af",
+          500: "#6b7280",
+          600: "#4b5563",
+          700: "#374151",
+          800: "#1f2937",
+          900: "#111827",
+        },
+        background: "#000000",
+        foreground: "#ffffff",
       },
-      fontFamily: {
-        "bw-gradual": ["Bw Gradual", "sans-serif"],
-        "ibm-plex": ["IBM Plex Sans", "sans-serif"],
+      borderRadius: {
+        xl: "1rem",
+        "2xl": "1.5rem",
       },
       spacing: {
-        18: "4.5rem", // 72px
-        88: "22rem", // 352px
-        112: "28rem", // 448px
-        128: "32rem", // 512px
-      },
-      height: {
-        "screen-80": "80vh",
-        "screen-90": "90vh",
-      },
-      maxWidth: {
-        "8xl": "88rem", // 1408px
-        "9xl": "96rem", // 1536px
+        section: "8rem", // ~128px, vertical rhythm
       },
     },
   },
