@@ -1,13 +1,11 @@
-# 📖 Evolution-2.2 Project Bible (Final Edition)
-
-#
+# 📖 Evolution-2.2 Project Bible (Updated Edition)
 
 ## ✅ Stage Checklist
 
 - [x] Repo Initialization
 - [x] Vercel Production Deploy
 - [ ] Design System
-- [ ] Auth0 Integration
+- [ ] Auth0 Integration (Removed for stability - see Stage 3 notes)
 - [ ] Pages
 - [ ] SEO & Metadata
 - [ ] Testing & Quality
@@ -24,7 +22,7 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 - **Framework:** Next.js 15 (App Router, TypeScript)
 - **Styling:** Tailwind CSS v4 + shadcn/ui + Framer Motion
 - **UI Components:** Modular, theme-driven, reusable, with `cn()` util (`clsx + tailwind-merge`)
-- **Auth:** Auth0 integration (via `@auth0/nextjs-auth0@4.9.0`)
+- **Auth:** Auth0 integration (via `@auth0/nextjs-auth0@4.9.0`) - **REMOVED for stability**
 - **Fonts:** IBM Plex Sans (body) + Bw Gradual (headings)
 - **Brand Palette:** Black / Gold / Gray / White
 - **Hosting/CI/CD:** Vercel (account: `baddeley0-2132`)
@@ -34,7 +32,7 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 
 **Repo:** [Badders80/evolution-2.2](https://github.com/Badders80/evolution-2.2)
 
-**Deployment:** [Vercel Project](https://vercel.com/baddeley0-2132s-projects/evolution-2.2)
+**Deployment:** [Vercel Project](https://evolution-2-2.vercel.app)
 
 - `main` → Production
 - PRs → Preview builds
@@ -59,6 +57,104 @@ This Bible governs the full lifecycle of **Evolution-2.2**, the official build o
 - Repo linked to GitHub (`evolution-2.2`).
 - Production deploy set up on Vercel.
 - Status: **Complete.**
+
+### Stage 2: Design System
+
+- Install and configure **shadcn/ui**.
+- Add `cn()` util using `clsx` and `tailwind-merge`.
+- Extend Tailwind config with brand palette and fonts:
+  ```ts
+  fontFamily: {
+    "bw-gradual": ["Bw Gradual", "sans-serif"],
+    "ibm-plex": ["IBM Plex Sans", "sans-serif"],
+  },
+  colors: {
+    gold: "#d4a964",
+    gray: "#747474",
+    background: "#000000",
+    foreground: "#ffffff",
+  }
+  ```
+- Integrate fonts: IBM Plex Sans + Bw Gradual.
+- Build base components: `Button`, `Header`, `Footer` (with social links: Instagram @evostables, X @evostables, LinkedIn Alex Baddeley), `Section` wrapper.
+- Apply brand theme globally (`globals.css`, layout.tsx).
+
+### Stage 3: Auth System (ARCHITECTURE DECISION)
+
+**IMPORTANT:** Auth0 has been **permanently removed** from this project for the following reasons:
+
+1. **Stability:** Auth0 integration was causing build failures and development friction
+2. **Scope:** Core Evolution Stables functionality can be delivered without authentication
+3. **Future-Proofing:** Authentication can be added later as a separate, focused implementation
+4. **Clean Architecture:** Removing Auth0 eliminates middleware complexity and environment variable management
+
+**Previous Auth0 code is preserved in comments** for future reference. When authentication is needed:
+
+- Re-implement with a simpler solution (NextAuth.js or Clerk)
+- Add as a dedicated Stage 8: Authentication
+- Ensure it doesn't disrupt the stable core build
+
+### Stage 4: Feature Buildout
+
+- Implement planned pages with Section wrapper:
+  - Home (`/`)
+  - About Us (`/about`)
+  - Tokinvest (`/tokinvest`)
+  - News (`/news`, with dynamic slugs)
+  - Events (`/events`, with dynamic slugs)
+  - Contact (`/contact`)
+  - My Stables (gated, `/my-stables`)
+- Footer: must include social links and icons for:
+
+### Stage 5: SEO & Metadata
+
+- Configure app/layout.tsx with generateMetadata().
+- Add OG and Twitter image support.
+- Add favicon + social preview images.
+- Ensure per-page dynamic metadata (News + Events slugs).
+
+### Stage 6: Testing & Quality
+
+- Install Jest + React Testing Library + axe-core/react.
+- Write tests for:
+  - Buttons & key UI components
+  - Auth flows (login/logout)
+  - Add branded error page (/app/error.tsx) and not-found page (/app/not-found.tsx).
+  - Add hover/glow effects inspired by Aceternity UI.
+  - Run Lighthouse audit, ensure >90 in all categories.
+  - Accessibility check: ensure WCAG compliance.
+
+### Stage 7: Final Verification
+
+- Verify all pages load correctly in production.
+- Confirm SEO metadata and OG images render on social previews.
+- Review commit history for clean stage-based commits.
+- Optional future roadmap: CMS (Sanity/Contentful), Analytics (Vercel, Posthog, GA), Monitoring (Sentry).
+
+---
+
+## ✅ Non-Negotiables
+
+- Bible-first. All contributors must follow this document exactly.
+- Env hygiene. .env.local private, .env.example public with placeholders.
+- No secrets in repo. Ever.
+- Commit discipline. Every stage = one clean commit.
+- Accessibility. WCAG AA minimum.
+- Performance. Lighthouse >90 target.
+- Tooling. Husky + lint-staged must be active.
+
+---
+
+## 🏁 Final QA
+
+Before final delivery:
+
+- Run Lighthouse, ensure all scores >90.
+- Run accessibility scans with axe-core/react.
+- Verify SEO metadata and OG images display correctly.
+- Confirm commit history is clean and follows stage-by-stage flow.
+
+✨ Built with discipline, designed for scale.
 
 ### Stage 2: Design System
 

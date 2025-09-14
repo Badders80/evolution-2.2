@@ -2,10 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: Global resets / custom styles */
+/* Global theme and resets */
 html, body {
   height: 100%;
   margin: 0;
-  font-family: sans-serif;
-  background-color: black; /* fallback background */
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+/* Heading styles with Bw Gradual font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bw Gradual", serif;
+  font-weight: 400;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a964;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8945a;
 }

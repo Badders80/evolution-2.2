@@ -4,11 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useUser } from "@auth0/nextjs-auth0";
+// import { useUser } from "@auth0/nextjs-auth0"; // Temporarily disabled
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useUser() || {};
+  // const { user } = useUser() || {}; // Temporarily disabled
 
   return (
     <>
@@ -53,14 +53,14 @@ export const Header = () => {
           >
             Contact
           </a>
-          {user && (
+          {/* {user && (
             <a
               href="/my-stables"
               className="text-gray hover:text-gold transition focus:outline-none focus:ring-2 focus:ring-gold"
             >
               My Stables
             </a>
-          )}
+          )} */}
         </nav>
 
         {/* Mobile Hamburger */}
@@ -91,9 +91,9 @@ export const Header = () => {
         <Button
           className="hidden md:block ml-4"
           variant="outline"
-          aria-label={user ? "Logout" : "Login"}
+          aria-label="Login" // Temporarily always shows Login
         >
-          {user ? "Logout" : "Login"}
+          Login
         </Button>
       </header>
 
@@ -145,7 +145,7 @@ export const Header = () => {
             >
               Contact
             </a>
-            {user && (
+            {/* {user && (
               <a
                 href="/my-stables"
                 className="text-gray hover:text-gold transition focus:outline-none focus:ring-2 focus:ring-gold"
@@ -154,15 +154,15 @@ export const Header = () => {
               >
                 My Stables
               </a>
-            )}
+            )} */}
             <Button
               className="mt-4"
               variant="outline"
-              aria-label={user ? "Logout" : "Login"}
+              aria-label="Login"
               onClick={() => setIsMenuOpen(false)}
               role="menuitem"
             >
-              {user ? "Logout" : "Login"}
+              Login
             </Button>
           </nav>
         </div>

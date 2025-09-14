@@ -9,15 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "bw-gradual": ["Bw Gradual", "serif"], // Will fallback to serif if not available
+        "ibm-plex": ["IBM Plex Sans", "sans-serif"],
+      },
       colors: {
-        gold: "#FFD700",
-        gray: {
-          100: "#f7f7f7",
-          200: "#e5e5e5",
-          500: "#737373",
-          700: "#404040",
-          900: "#171717",
-        },
+        gold: "#d4a964",
+        gray: "#747474",
+        background: "#000000",
+        foreground: "#ffffff",
       },
       container: {
         center: true,
