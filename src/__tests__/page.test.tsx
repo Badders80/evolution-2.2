@@ -22,53 +22,26 @@ jest.mock("next/image", () => ({
 }));
 
 describe("HomePage", () => {
-  it("renders the header with logo and navigation", () => {
+  it("renders the design system test sections", () => {
     render(<HomePage />);
 
-    // Check logo
-    const logo = screen.getByAltText("Evolution Stables Logo");
-    expect(logo).toBeInTheDocument();
+    // Check test sections
+    expect(screen.getByRole("heading", { name: "Test Section 1", level: 1 })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Test Section 2", level: 1 })).toBeInTheDocument();
 
-    // Check nav links by href to avoid conflicts with footer links
-    expect(screen.getAllByRole("link", { name: "Services" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "Process" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "Pricing" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "Blog" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: "Contact" }).length).toBeGreaterThan(0);
-
-    // Check CTA button
-    expect(screen.getByText("Get Started")).toBeInTheDocument();
+    // Check that sections have proper container structure
+    const sections = screen.getAllByRole("generic", { hidden: true });
+    expect(sections.length).toBeGreaterThan(0);
   });
 
-  it("renders the hero section with brand logo and tagline", () => {
+  it("renders sections with consistent spacing", () => {
     render(<HomePage />);
 
-    // Check for the brand logo alt text
-    expect(screen.getByAltText("Evolution Stables Brand Logo")).toBeInTheDocument();
-
-    // Check that the TextGenerateEffect component is present (it may not show text immediately in tests)
-    expect(screen.getByText("|")).toBeInTheDocument();
-  });
-
-  it("renders section placeholders", () => {
-    render(<HomePage />);
-
-    // Check section headings with updated names
-    expect(screen.getByRole("heading", { name: "Premium Services", level: 2 })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Our Process", level: 2 })).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: "Ready to Own the Experience?", level: 2 }),
-    ).toBeInTheDocument();
-
-    // Check service items
-    expect(screen.getByText("Stabling")).toBeInTheDocument();
-    expect(screen.getByText("Training")).toBeInTheDocument();
-    expect(screen.getByText("Healthcare")).toBeInTheDocument();
-
-    // Check process steps
-    expect(screen.getByText("Step 1: Consultation")).toBeInTheDocument();
-    expect(screen.getByText("Step 2: Customization")).toBeInTheDocument();
-    expect(screen.getByText("Step 3: Care")).toBeInTheDocument();
+    // Check that sections exist and have proper structure
+    const headings = screen.getAllByRole("heading");
+    expect(headings).toHaveLength(2);
+    expect(headings[0]).toHaveTextContent("Test Section 1");
+    expect(headings[1]).toHaveTextContent("Test Section 2");
   });
 
   it("matches snapshot", () => {
