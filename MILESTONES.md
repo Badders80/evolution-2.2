@@ -30,11 +30,14 @@ Status: **Complete** ✅
 - Tailwind brand config + fonts (gold #d4a964, custom aspect ratios)
 - shadcn/ui installed and configured
 - Base components (`Button`, `Header`, `Footer`, `Section`, `Hero`)
+- ✅ Added `Card` and `Input` components from shadcn/ui
+- ✅ CSS variables defined (--gold, --background, --foreground, --gray)
 - Custom fonts: Bw Gradual (headings), IBM Plex Sans (body)
 - Brand colors and spacing system implemented
 - ✅ Navbar visibility issue resolved - navigation tabs and auth buttons now visible
 - ✅ Proper edge spacing with px-4 md:px-6 padding implemented
 - ✅ Mobile menu toggle functionality maintained for responsive design
+- ✅ UI Inspiration Bank created (/docs/ui-inspiration.md) with Aceternity/Framer Motion patterns
 - Responsive navigation with proper padding and mobile toggle
 
 Status: **Complete** ✅
