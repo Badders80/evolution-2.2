@@ -36,10 +36,10 @@ git clone https://github.com/Badders80/evolution-2.2.git
 cd evolution-2.2
 
 # Install dependencies
-npm install
+pnpm install
 
 # Run dev server
-npm run dev
+pnpm dev
 ```
 
 Visit http://localhost:3000
