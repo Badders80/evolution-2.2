@@ -22,46 +22,38 @@ jest.mock("next/image", () => ({
 }));
 
 describe("HomePage", () => {
-  it("renders the landing page structure", () => {
+  it("renders the scaffold structure", () => {
     render(<HomePage />);
 
-    // Check main heading
-    expect(
-      screen.getByRole("heading", { name: "Excellence in Equine Care", level: 1 }),
-    ).toBeInTheDocument();
+    // Check main hero heading
+    expect(screen.getByRole("heading", { name: "Hero", level: 1 })).toBeInTheDocument();
 
-    // Check section headings
-    expect(screen.getByRole("heading", { name: "Premium Services", level: 2 })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Our Process", level: 2 })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Pricing", level: 2 })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Blog", level: 2 })).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: "Ready to Own the Experience?", level: 2 }),
-    ).toBeInTheDocument();
+    // Check section content
+    expect(screen.getByText("Section1")).toBeInTheDocument();
+    expect(screen.getByText("Section2")).toBeInTheDocument();
+    expect(screen.getByText("Section3")).toBeInTheDocument();
+    expect(screen.getByText("Section4")).toBeInTheDocument();
+    expect(screen.getByText("CTA")).toBeInTheDocument();
+    expect(screen.getByText("Footer")).toBeInTheDocument();
 
-    // Check navigation
-    expect(screen.getByRole("navigation", { name: "Main navigation" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Services" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Process" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Blog" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Contact" })).toBeInTheDocument();
+    // Check navbar content
+    expect(screen.getByText("Nav Bar")).toBeInTheDocument();
+    expect(screen.getByText("Get Started / Login")).toBeInTheDocument();
 
-    // Check CTA buttons
-    expect(screen.getByRole("button", { name: "Get Started" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Learn More" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Get Started Today" })).toBeInTheDocument();
+    // Check logo alt text
+    expect(screen.getByAltText("Evolution Stables Logo")).toBeInTheDocument();
   });
 
-  it("renders sections with consistent spacing", () => {
+  it("renders sections with alternating backgrounds", () => {
     render(<HomePage />);
 
-    // Check that multiple headings exist (main + section headings)
-    const headings = screen.getAllByRole("heading");
-    expect(headings.length).toBeGreaterThan(5); // Main heading + 4 section headings + CTA heading
+    // Check that all sections are present
+    const sections = screen.getAllByText(/^Section\d+$/);
+    expect(sections).toHaveLength(4);
 
-    // Check that the main heading is "Excellence in Equine Care"
-    expect(headings[0]).toHaveTextContent("Excellence in Equine Care");
+    // Check CTA and Footer
+    expect(screen.getByText("CTA")).toBeInTheDocument();
+    expect(screen.getByText("Footer")).toBeInTheDocument();
   });
 
   it("matches snapshot", () => {
